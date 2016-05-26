@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<meta charset="utf-8">
+	<title>Title - Powered By Niki</title>
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<link type="image/x-icon" href="../favicon.ico" rel="shortcut icon"/>
+	<link type="text/css" rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+	<script type="text/javascript" src="../node_modules/angular/angular.js"></script>
+</head>
+<body>
+	<div ng-controller="myController">
+		<form name="myForm">
+			<input type="text" name="username" ng-model="user.username" placeholder="请输入账号..."/>
+			<input type="password" name="password" ng-model="user.password" placeholder="请输入密码..."/>
+			<button class="btn btn-primary" ng-click="login()">sign in</button>
+		</form>
+		<ng-form name="myForm">
+			<input type="text" name="username" ng-model="user.username" placeholder="请输入账号..."/>
+			<input type="password" name="password" ng-model="user.password" placeholder="请输入密码..."/>
+			<button class="btn btn-primary" ng-click="login()">sign in</button>
+		</ng-form>
+	</div>
+<script type="text/javascript">
+	var myApp = angular.module('myApp', []);
+	myApp.controller('myController', ['$scope', function($scope){
+		var user = $scope.user = {};
+		$scope.login = function(){
+			console.info(user);
+		}
+	}]);
+</script>
+</body>
+</html>

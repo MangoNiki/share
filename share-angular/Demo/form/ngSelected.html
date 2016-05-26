@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<meta charset="utf-8">
+	<title>Title - Powered By Niki</title>
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<link type="image/x-icon" href="../favicon.ico" rel="shortcut icon"/>
+	<link type="text/css" rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+	<script type="text/javascript" src="../node_modules/angular/angular.js"></script>
+</head>
+<body ng-cloak>
+	<div class="row" ng-controller="myCountry">
+		<div class="col-md-offset-3 col-md-6">
+			<select ng-model="m.myCountry">
+				<option value="100">北京</option>
+				<option value="101">上海</option>
+				<option value="102">广州</option>
+				<option value="103">深圳</option>
+				<option value="104" ng-selected="true">四川</option>
+				<option value="105">杭州</option>
+			</select>
+			<div ng-bind="m.myCountry"></div>
+		</div>
+		<div class="col-md-offset-3 col-md-6">
+			<select>
+				<option value="100">北京</option>
+				<option value="101">上海</option>
+				<option value="102">广州</option>
+				<option value="103">深圳</option>
+				<option value="104" selected="true">四川</option>
+				<option value="105">杭州</option>
+			</select>
+		</div>
+	</div>
+<script type="text/javascript">
+	var myApp = angular.module('myApp', []);
+	myApp.controller('myController', ['$scope', function($scope){
+		var m = $scope.m = {};
+		m.myCountry = 100;
+	}]);
+</script>
+</body>
+</html>

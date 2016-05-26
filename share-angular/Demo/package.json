@@ -1,0 +1,16 @@
+{
+  "name": "angularjs",
+  "version": "1.0.0",
+  "description": "this is angularjs demos",
+  "private": true,
+  "readme": "README.md",
+  "scripts": {
+    "start": "http-server -a 0.0.0.0 -p 80"
+  },
+  "author": "niki",
+  "dependencies": {
+    "angular": "^1.2.29",
+    "bootstrap": "^3.3.6",
+    "jquery": "^1.11.3"
+  }
+}

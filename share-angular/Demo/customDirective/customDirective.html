@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+    <meta charset="utf-8">
+    <title>Title - Powered By Niki</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link type="image/x-icon" href="../favicon.ico" rel="shortcut icon" />
+    <link type="text/css" rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <script type="text/javascript" src="../node_modules/angular/angular.js"></script>
+</head>
+
+<body>
+<script type="text/javascript">
+	var myApp = angular.module('myApp', []);
+	myApp.directive('myDirective', function() {
+	    return {
+	        restrict: String,
+	        priority: Number,
+	        terminal: Boolean,
+	        template: String or Template Function: function(tElement, tAttrs)(...},
+	        templateUrl: String,
+	        replace: Boolean or String,
+	        scope: Boolean or Object,
+	        transclude: Boolean,
+	        controller: String or function(scope, element, attrs, transclude, otherInjectables) {...},
+	        controllerAs: String,
+	        require: String,
+	        link: function(scope, iElement, iAttrs) {...},
+	        compile: function(tElement, tAttrs, transclude) {
+	            // 方式一：返回一个对象或连接函数
+	            return {
+	                pre: function(scope, iElement, iAttrs, controller) {...},
+	                post: function(scope, iElement, iAttrs, controller) {...}
+	            }
+	            //方式二：
+	           	return function postLink(...) {...}
+	        }
+	    };
+	});
+</script>
+</body>
+
+</html>

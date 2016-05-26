@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<meta charset="utf-8">
+	<title>Title - Powered By Niki</title>
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<link type="image/x-icon" href="/favicon.ico" rel="shortcut icon"/>
+	<link type="text/css" rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+	<script type="text/javascript" src="../node_modules/angular/angular.js"></script>
+</head>
+<body>
+	<div ng-controller="myController">
+		<h1>{{hello}}</h1>
+	</div>
+<script type="text/javascript">
+	var myApp = angular.module('myApp', []);
+	myApp.controller('myController', function($scope){
+		$scope.hello = 'Hello World';
+	});
+</script>
+</body>
+</html>

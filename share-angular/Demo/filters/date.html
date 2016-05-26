@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<meta charset="utf-8">
+	<title>Title - Powered By Niki</title>
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<link type="image/x-icon" href="../favicon.ico" rel="shortcut icon"/>
+	<link type="text/css" rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+	<script type="text/javascript" src="../node_modules/angular/angular.js"></script>
+</head>
+<body>
+	<div ng-controller="myController">
+		<p>{{ today | date:'medium' }} <!-- Aug 09, 2013 12:09:02 PM --></p>
+		<p>{{ today | date:'short' }} <!-- 8/9/1312:09PM --></p>
+		<p>{{ today | date:'fullDate' }} <!-- Thursday, August 09, 2013 --></p>
+		<p>{{ today | date:'longDate' }} <!-- August 09, 2013 --></p>
+		<p>{{ today | date:'mediumDate' }}<!-- Aug 09, 2013 --></p>
+		<p>{{ today | date:'shortDate' }} <!-- 8/9/13 --></p>
+		<p>{{ today | date:'mediumTime' }}<!-- 12:09:02 PM --></p>
+		<p>{{ today | date:'shortTime' }} <!-- 12:09 PM --></p>
+		<p>四位年份： {{ today | date:'yyyy' }} <!-- 2013 --></p>
+		<p>两位年份： {{ today | date:'yy' }} <!-- 13 --></p>
+		<p>一位年份： {{ today | date:'y' }} <!-- 2013 --></p>
+		<p>英文月份： {{ today | date:'MMMM' }} <!-- August --></p>
+		<p>英文月份简写： {{ today | date:'MMM' }} <!-- Aug --></p>
+		<p>数字月份： {{ today |date:'MM' }} <!-- 08 --></p>
+		<p>一年中的第几个月份： {{ today |date:'M' }} <!-- 8 --></p>
+		<p>数字日期： {{ today|date:'dd' }} <!-- 09 --></p>
+		<p>一个月中的第几天： {{ today | date:'d' }} <!-- 9 --></p>
+		<p>英文星期： {{ today | date:'EEEE' }} <!-- Thursday --></p>
+		<p>英文星期简写： {{ today | date:'EEE' }} <!-- Thu --></p>
+		<p>24小时制数字小时： {{today|date:'HH'}} <!--00--></p>
+		<p>一天中的第几个小时： {{today|date:'H'}} <!--0--></p>
+		<p>12小时制数字小时： {{today|date:'hh'}} <!--12--></p>
+		<p>上午或下午的第几个小时： {{today|date:'h'}} <!--12--></p>
+		<p>数字分钟数： {{ today | date:'mm' }} <!-- 09 --></p>
+		<p>一个小时中的第几分钟： {{ today | date:'m' }} <!-- 9 --></p>
+		<p>数字秒数： {{ today | date:'ss' }} <!-- 02 --></p>
+		<p>一分钟内的第几秒： {{ today | date:'s' }} <!-- 2 --></p>
+		<p>毫秒数： {{ today | date:'.sss' }} <!-- .995 --></p>
+		<p>上下午标识： {{ today | date:'a' }} <!-- AM --></p>
+		<p>四位时区标识： {{ today | date:'Z' }} <!--- 0700 --></p>
+		<p>{{ today | date:'MMMd, y' }} <!-- Aug9, 2013 --></p>
+		<p>{{ today | date:'EEEE, d, M' }} <!-- Thursday, 9, 8--></p>
+		<p>{{ today | date:'hh:mm:ss.sss' }} <!-- 12:09:02.995 --></p>
+	</div>
+<script type="text/javascript">
+	var myApp = angular.module('myApp', []);
+	myApp.controller('myController', ['$scope', function($scope){
+		$scope.today = new Date();
+	}]);
+</script>
+</body>
+</html>

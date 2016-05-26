@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<meta charset="utf-8">
+	<title>Title - Powered By Niki</title>
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<link type="image/x-icon" href="../favicon.ico" rel="shortcut icon"/>
+	<link type="text/css" rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+	<script type="text/javascript" src="../node_modules/angular/angular.js"></script>
+</head>
+<body>
+	
+<script type="text/javascript">
+	var myApp = angular.module('myApp', []);
+
+	myApp.constant('constantValue', 'Hello World');//定义一个常量
+	myApp.value('valueName', 'Niki');//定义一个值
+
+	myApp.config(['constantValue',function(constantValue) {
+		console.log(constantValue);
+	}]);
+	myApp.config(['valueName',function(valueName) {
+		console.log(valueName);//这边会报错，无法访问该值
+	}]);
+</script>
+</body>
+</html>

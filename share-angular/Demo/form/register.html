@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<meta charset="utf-8">
+	<title>Title - Powered By Niki</title>
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<link type="image/x-icon" href="../favicon.ico" rel="shortcut icon"/>
+	<link type="text/css" rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+	<script type="text/javascript" src="../node_modules/angular/angular.js"></script>
+	<style type="text/css">
+		input.ng-dirty.ng-invalid-minlength{
+            border: 1px solid red;
+            color: red;
+        }
+        input.ng-dirty.ng-invalid-pattern{
+        	border: 1px solid yellow;
+            color: yellow;
+        }
+	</style>
+</head>
+<body>
+	<div class="row" ng-controller="myController" style="margin-top: 100px;">
+		<form name="myForm">
+			<div class="col-md-offset-3 col-md-6">
+				<span>账号</span>
+				<input type="text" name="username" ng-model="u.username" ng-minlength="8" ng-pattern="/^[a-zA-Z0-9]+$/"/>
+				<div ng-show="myForm.username.$dirty"/>
+					<span ng-show="myForm.username.$error.minlength">
+						账号长度至少为8位
+					</span>
+					<span ng-show="u.username.length == 0">
+						账号不能为空
+					</span>
+					<span ng-show="myForm.username.$error.pattern">
+						账号只能用数字或者字母
+					</span>
+				</div>
+			</div>
+			<div class="col-md-offset-3 col-md-6">
+				<button class="btn btn-primary" ng-disabled="myForm.username.$invalid && myForm.username.$error">Sign in</button>
+			</div>
+		</form>
+	</div>
+<script type="text/javascript">
+	var myApp = angular.module('myApp', []);
+	myApp.controller('myController', ['$scope', function($scope){
+
+	}]);
+</script>
+</body>
+</html>

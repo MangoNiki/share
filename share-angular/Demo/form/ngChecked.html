@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<meta charset="utf-8">
+	<title>Title - Powered By Niki</title>
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<link type="image/x-icon" href="../favicon.ico" rel="shortcut icon"/>
+	<link type="text/css" rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+	<script type="text/javascript" src="../node_modules/angular/angular.js"></script>
+</head>
+<body>
+	
+	<div ng-controller="myController">
+		<label>
+			<input type="checkbox" ng-checked="basketball"  ng-model="basketball">篮球
+		</label>
+		<label>
+			<input type="checkbox" ng-checked="swimming"  ng-model="swimming">游泳
+		</label>
+		<label>
+			<input type="checkbox" ng-checked="soccer"  ng-model="soccer">足球
+		</label>
+
+		<h1>{{basketball}} -- {{swimming}} -- {{soccer}}</h1>
+	</div>
+<script type="text/javascript">
+	var myApp = angular.module('myApp', []);
+	myApp.controller('myController', ['$scope', function($scope){
+		$scope.basketball = false;
+		$scope.swimming = false;
+		$scope.soccer = true;
+	}]);
+</script>
+</body>
+</html>

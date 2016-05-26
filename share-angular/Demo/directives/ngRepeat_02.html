@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<meta charset="utf-8">
+	<title>Title - Powered By Niki</title>
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<link type="image/x-icon" href="../favicon.ico" rel="shortcut icon"/>
+	<link type="text/css" rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+	<script type="text/javascript" src="../node_modules/angular/angular.js"></script>
+	<style type="text/css">
+		.oddRow { 
+			color: #eee;
+			background-color: blue; 
+		} 
+		.evenRow { 
+			color: #eee;
+			background-color: red; 
+		}
+	</style>
+</head>
+<body>
+	<div ng-controller="myController">
+		<ul>
+			<li ng-repeat="student in students" ng-class="{oddRow:$odd,evenRow:$even}">
+				<h1 ng-bind="student.name"></h1>
+				<p>序号<span ng-bind="$index"></span></p>
+				<p>年龄<span ng-bind="student.age"></span></p>
+				<p>性别<span ng-bind="student.sex"></span></p>
+			</li>
+		</ul>
+	</div>
+<script type="text/javascript">
+	var myApp = angular.module('myApp', []);
+	myApp.controller('myController', ['$scope', function($scope){
+		$scope.students = [
+			{"name":"Alice","sex":"female","age":21},
+			{"name":"Bob","sex":"male","age":25},
+			{"name":"Niki","sex":"male","age":23}
+		];
+	}]);
+</script>
+</body>
+</html>
